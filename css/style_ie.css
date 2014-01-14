@@ -6,10 +6,6 @@ html {
     padding: 0;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
 body {
     color: #3e2a10;
     font-family: Arial;
@@ -18,8 +14,16 @@ body {
     background-color: #c3b7ad;
 }
 
-figure, h3, header, p {
+figure, h3 {
     margin: 0;
+}
+
+header {
+    margin: 0;
+}
+
+p {
+    margin-bottom: 0;
 }
 
 ul {
@@ -30,6 +34,7 @@ ul {
 
 ul a {
     color: #3e2a10;
+    /*text-decoration: none;*/
 }
 
 /* Styles spécifiques */
@@ -40,12 +45,23 @@ ul a {
     width: 70%;
     background-color: #fafaf6;
     padding: 1%;
+    /*border-left: 1px solid #DEDEDE;
+    border-right: 1px solid #DEDEDE;
+    box-shadow: 0 0 6px #DDDDDD;*/
 }
 
 @media screen and (min-width: 600px) {
     header {
         overflow: hidden;
+        background-color: #e4e2c9;
+
+        /*background-image: linear-gradient(bottom, #40352b 0%, #594a3e 75%);
+        background-image: -o-linear-gradient(bottom, #40352b 0%, #594a3e 75%);
+        background-image: -moz-linear-gradient(bottom, #40352b 0%, #594a3e 75%);
+        background-image: -webkit-linear-gradient(bottom, #40352b 0%, #594a3e 75%);
+        background-image: -ms-linear-gradient(bottom, #40352b 0%, #594a3e 75%);*/
         background-color: #594a3e;
+
         padding-left: 1%;
     }
 
@@ -124,17 +140,8 @@ footer #listeFormations {
     -moz-border-radius: 6px;
     border-radius: 6px;
 
-    min-height: 200px;
+    min-height: 150px;
     padding: 1%;
-}
-
-#contenuPrincipal #presAssociation h3,
-#contenuPrincipal #presRealisations h3,
-#contenuPrincipal #presFormations h3,
-footer #listeLiens h3,
-footer #listeRealisations h3,
-footer #listeFormations h3 {
-    margin-bottom: 2%;
 }
 
 #contenuPrincipal #presAssociation,
@@ -160,27 +167,15 @@ footer #listeFormations {
 }
 
 /* Début des cartes*/
-.flipper,
-.flipper > div{
-  transition: transform 1s;
-}
 
-.front{
-  transform: perspective(600px) rotateX(0deg);
-}
-.back{
- transform: perspective(600px) rotateX(180deg);
-}
+
 .flip-container:hover .front, .flip-container .back{
- display:none;
-  transform: perspective(600px) rotateX(180deg);
-  backface-visibility: hidden;
+	display:none;
 }
 .flip-container:hover .back, .flip-container .front{
  	 display:block;
- 	 transform: perspective(600px) rotateX(360deg);
- 	 backface-visibility: hidden;
 }
+	
 /*Fin des cartes*/
 
 /* Debut du slider */
@@ -204,10 +199,7 @@ footer #listeFormations {
     -ms-animation-name: AutoSlide;
     -o-animation-name: AutoSlide;
     animation-name: AutoSlide;
-    -webkit-animation-duration: 15s;
-    -moz-animation-duration: 15s;
-    -o-animation-duration: 15s;
-    animation-duration: 15s;
+    animation-duration: 5s;
     
     -webkit-animation-iteration-count: infinite;
     -moz-animation-iteration-count: infinite;
@@ -220,80 +212,81 @@ footer #listeFormations {
     -ms-animation-timing-function: ease-in-out;
     -o-animation-timing-function: ease-in-out;
     animation-timing-function: ease-in-out; 
+    -webkit-animation-duration: 10s;
     
 }
 
 @keyframes AutoSlide {
-    0%,10%,100% {
+    0%,35%,100% {
         top: 0%; /*1ère image*/
     }
     
-    30%,40% {
+    45%,70% {
         top: -400px; /*2ème image*/
     }
     
-    60%,90% {
+    75%,90% {
         top: -800px; /*3ème image*/
     }
     
 }
 
 @-moz-keyframes AutoSlide {
-    0%,10%,100% {
+    0%,35%,100% {
         top: 0%; /*1ère image*/
     }
     
-    30%,40% {
+    45%,70% {
         top: -400px; /*2ème image*/
     }
     
-    60%,90% {
+    75%,90% {
         top: -800px; /*3ème image*/
     }
     
 }
 
 @-webkit-keyframes "AutoSlide" {
-    0%,10% {
+    0%,35%,100% {
         top: 0%; /*1ère image*/
     }
     
-    40%,50% {
+    45%,70% {
         top: -400px; /*2ème image*/
     }
     
-    70%,80% {
+    75%,90% {
         top: -800px; /*3ème image*/
     }
     
 }
 
 @-ms-keyframes "AutoSlide" {
-    0%,30%,100% {
+    0%,35%,100% {
         top: 0%; /*1ère image*/
     }
     
-    30%,60% {
+    45%,70% {
         top: -400px; /*2ème image*/
     }
     
-    60%,90% {
+    75%,90% {
         top: -800px; /*3ème image*/
     }
     
 }
-
+}
 
 @-o-keyframes "AutoSlide" {
-    0%,30%,100% {
+    0%,35%,100% {
         top: 0%; /*1ère image*/
     }
     
-    30%,60% {
+    45%,70% {
         top: -400px; /*2ème image*/
     }
     
-    60%,90% {
+    75%,90% {
         top: -800px; /*3ème image*/
     }
     
