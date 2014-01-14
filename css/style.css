@@ -29,6 +29,7 @@ p {
 ul {
     list-style-type: none;
     padding-left: 0;
+    margin: 0;
 }
 
 ul a {
@@ -54,18 +55,23 @@ ul a {
         overflow: hidden;
         background-color: #e4e2c9;
 
-        background-image: linear-gradient(bottom, #40352b 0%, #594a3e 75%);
+        /*background-image: linear-gradient(bottom, #40352b 0%, #594a3e 75%);
         background-image: -o-linear-gradient(bottom, #40352b 0%, #594a3e 75%);
         background-image: -moz-linear-gradient(bottom, #40352b 0%, #594a3e 75%);
         background-image: -webkit-linear-gradient(bottom, #40352b 0%, #594a3e 75%);
-        background-image: -ms-linear-gradient(bottom, #40352b 0%, #594a3e 75%);
+        background-image: -ms-linear-gradient(bottom, #40352b 0%, #594a3e 75%);*/
+        background-color: #594a3e;
 
         padding-left: 1%;
     }
 
+    nav ul {
+        margin: 1% 0 1% 0;
+    }
+
     nav ul li {
         padding: 5px;
-        margin-left: 2px;
+        margin-left: 1%;
         display: inline-block;
         background-color: #8c7764;
 
@@ -92,8 +98,8 @@ nav ul li a {
     }
 
     nav ul li {
-       background-color: #40352b;
-       padding: 1%;
+        background-color: #594a3e;
+        padding: 1%;
     }
 
     nav ul li:hover {
