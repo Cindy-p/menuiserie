@@ -1,0 +1,317 @@
+/* Initialisation */
+
+html {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    color: #3e2a10;
+	font-family: Arial;
+	font-size: 0.75em;
+	margin: 0;
+	background-color: #c3b7ad;
+}
+
+figure {
+	margin: 0;
+}
+
+h3 {
+    margin: 0;
+    /*padding: 0;*/
+}
+
+p {
+    margin-bottom: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul a {
+    color: #3e2a10;
+    /*text-decoration: none;*/
+}
+
+/* Styles spécifiques */
+
+#page {
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+	background-color: #fafaf6;
+    padding: 0 0 1% 0;
+}
+
+header {
+    overflow: hidden;
+    background-color: #e4e2c9;
+}
+
+
+#logo {
+	float: left;
+}
+
+#logo img {
+	width: 70px;
+}
+
+nav ul li {
+	padding: 5px;
+	display: inline-block;
+}
+
+nav ul li a {
+	text-decoration: none;
+}
+
+#contenuPrincipal, footer {
+    overflow: hidden;
+}
+
+#contenuPrincipal {
+    margin-bottom: 10%;
+}
+
+#contenuPrincipal #presAssociation,
+#contenuPrincipal #presRealisations,
+#contenuPrincipal #presFormations,
+footer #listeLiens,
+footer #listeRealisations,
+footer #listeFormations {
+    background-color: #faf9f4;
+
+    -moz-box-shadow: inset 0 0 6px -2px #666;
+    -webkit-box-shadow: inset 0 0 6px -2px #666;
+    box-shadow: inset 0 0 6px -2px #666;
+    border: 1px solid #bbb;
+
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+
+    min-height: 150px;
+    padding: 1%;
+}
+
+#contenuPrincipal #presAssociation,
+footer #listeLiens {
+    float: left;
+    width: 30%;
+}
+
+#contenuPrincipal #presRealisations,
+footer #listeRealisations {
+    float: right;
+    width: 30%;
+}
+
+#contenuPrincipal #presFormations,
+footer #listeFormations {
+    margin-left: 33%;
+    margin-right: 33%;
+}
+
+#contenuPrincipal .pivotant {
+	display: none;
+}
+
+/* Début des cartes*/
+.flip-container {
+    -webkit-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000;
+}
+    .flip-container:hover .flipper,
+.flip-container.hover .flipper {
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+}
+    .flipper {
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: relative;
+}
+    /* hide back of pane during swap */
+    .front,
+.back {
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+    /* front pane, placed above back */
+    .front {
+    z-index: 2;
+}
+
+    /* front pane, placed above back */
+    .front:hover {
+    z-index: 0;
+    
+    backface-visibility:visible;
+}
+    /* back, initially hidden pane */
+    .back {
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+    .back:hover {
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    z-index: 2;
+}
+
+    .flip-container:hover .flipper,
+.flip-container.hover .flipper,
+.flip-container.flip .flipper {
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+    .vertical.flip-container {
+    position: relative;
+}
+    .vertical .back {
+    -webkit-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+}
+    .vertical.flip-container .flipper {
+    -webkit-transform-origin: 100%;
+    -ms-transform-origin: 100%;
+    transform-origin: 100%;
+    /* half of height */
+}
+    .vertical.flip-container:hover .flipper {
+    -webkit-transform: rotateX(-180deg);
+    -ms-transform: rotateX(-180deg);
+    transform: rotateX(-180deg);
+}
+/*Fin des cartes*/
+
+/* Debut du slider */
+#slider {
+    margin: auto;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+#sliderImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    text-align: center;
+    display: inline;
+
+    -webkit-animation-name: AutoSlide;
+    -moz-animation-name: AutoSlide;
+    -ms-animation-name: AutoSlide;
+    -o-animation-name: AutoSlide;
+    animation-name: AutoSlide;
+    animation-duration: 5s;
+
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -ms-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+    -ms-animation-timing-function: ease-in-out;
+    -o-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out; 
+    -webkit-animation-duration: 10s;
+    
+}
+
+@keyframes AutoSlide {
+    0%,35%,100% {
+        top: 0%; /*1ère image*/
+    }
+
+    70%,90% {
+        top: -200px; /*2ème image*/
+    }
+
+}
+
+@-moz-keyframes AutoSlide {
+ 0%,35%,100% {
+    top: 0%; /*1ère image*/
+}
+
+70%,90% {
+    top: -200px; /*2ème image*/
+}
+
+}
+
+@-webkit-keyframes "AutoSlide" {
+    0%,35%,100% {
+        top: 0%; /*1ère image*/
+    }
+
+    45%,70% {
+        top: -400px; /*2ème image*/
+    }
+    
+    75%,90% {
+        top: -800px; /*3ème image*/
+    }
+
+    }
+
+    @-ms-keyframes "AutoSlide" {
+        0%,35%,100% {
+        top: 0%; /*1ère image*/
+    }
+
+    70%,90% {
+        top: -200px; /*2ème image*/
+    }
+}
+
+@-o-keyframes "AutoSlide" {
+    0%,35%,100% {
+        top: 0%; /*1ère image*/
+    }
+
+    70%,90% {
+        top: -200px; /*2ème image*/
+    }
+}
+
+.imgSlider {
+    max-width: 100%;
+    display: inline;
+}
+
+#slider figure {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+/* Fin du slider */
