@@ -185,26 +185,65 @@ footer #listeFormations {
 }
 
 /* Début des cartes*/
-.flipper,
-.flipper > div{
-  transition: transform 1s;
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+}
+    /* Réalisation de la'nimation en 3d*/
+    .flipper {
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -ms-transition:all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: relative;
+}
+  
+    /* Cache la partie non visible */
+    .front,
+.back {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+    /* Mettre la deuxieme partie en arrière */
+    .front {
+    z-index: 2;
 }
 
-.front{
-  transform: perspective(600px) rotateX(0deg);
+    .back { 
+    -webkit-transform: perspective(600px) rotateY(180deg);
+    -moz-transform: perspective(600px) rotateY(180deg);
+    -ms-transform: perspective(600px) rotateY(180deg);
+    -o-transform: perspective(600px) rotateY(180deg);
+    transform: perspective(600px) rotateY(180deg);
 }
-.back{
- transform: perspective(600px) rotateX(180deg);
+    /* Faire tourner la partie vertical*/
+    .vertical .back {
+    -webkit-transform: perspective(600px) rotateX(180deg);
+    -moz-transform: perspective(600px) rotateX(180deg);
+    -ms-transform: perspective(600px) rotateX(180deg);
+    -o-transform: perspective(600px) rotateX(180deg);
+    transform: perspective(600px) rotateX(180deg);
 }
-.flip-container:hover .front, .flip-container .back{
- display:none;
-  transform: perspective(600px) rotateX(180deg);
-  backface-visibility: hidden;
-}
-.flip-container:hover .back, .flip-container .front{
- 	 display:block;
- 	 transform: perspective(600px) rotateX(360deg);
- 	 backface-visibility: hidden;
+    /* Remettre la partie d'origine vertical */
+    .vertical.flip-container:hover .flipper {
+    -webkit-transform: rotateX(-180deg);
+    -moz-transform: rotateX(-180deg);
+    -ms-transform: rotateX(-180deg);
+    -o-transform: rotateX(-180deg);
+    transform: rotateX(-180deg);
 }
 /*Fin des cartes*/
 
