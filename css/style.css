@@ -336,3 +336,7 @@ footer #listeFormations {
     display: inline-block;
 }
 /* Fin du slider */
+.lienDroite {
+    margin-top:15px;
+    float:right;
+}
